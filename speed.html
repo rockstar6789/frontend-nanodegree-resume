@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+
+  <!-- More on helper.js in the class -->
+
+</head>
+<body>
+
+<h3>Speed of Light</h3>
+
+
+<p id="answer"></p>
+
+<script>
+var speed_of_light_m_per_sec = 299792458;
+var one_m_in_cm = 100;
+var one_nanosecond = 1/1000000000;
+var speed = Math.round(speed_of_light_m_per_sec * one_m_in_cm * one_nanosecond);
+document.getElementById("answer").innerHTML = speed;
+</script>
+
+</body>
+</html>
