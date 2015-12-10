@@ -1,1 +1,1 @@
-$("#main").append([7]);
+$("#main").append([]);
