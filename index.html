@@ -98,17 +98,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   course.
   -->
 
-<!-- P2.L1.5 search and replace - start -->
-    <script type="text/javascript">
-          var name = "Rock J";
-          var role = "UX Architect";
-          var formattedName = HTMLheaderName.replace("%data%", name);
-          var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-          $("#header").append(formattedRole);
-          $("#header").prepend(formattedName);
-  </script>
-<!-- P2.L1.5 search and replace - end -->
 
   <script type="text/javascript">
     // Notice how all of a sudden there's JavaScript inside this HTML
@@ -126,29 +116,30 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
-    }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+      document.getElementById('main').style.backgroundColor = 'black';
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
+      document.getElementById('topContacts').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByTagName('h1').length === 0) {
+      document.getElementById('header').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('work-entry').length === 0) {
+      document.getElementById('workExperience').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('project-entry').length === 0) {
+      document.getElementById('projects').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('education-entry').length === 0) {
+      document.getElementById('education').style.backgroundColor = 'black';
+    }
+    if(document.getElementsByClassName('flex-item').length === 0) {
+      document.getElementById('lets-connect').style.backgroundColor = 'black';
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+      document.getElementById('mapDiv').style.backgroundColor = 'black';
     }
   </script>
-
-
 
 
 
