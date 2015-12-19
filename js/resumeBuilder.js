@@ -11,7 +11,7 @@ var bio =
         },
         "welcomeMessage": "I rate my success by how I make other people successful.",
         "skills": [
-                    "Making useful things", "User Experience Design", "IT 3.0 Marketplaces", "Financial Service Product Innovation", "Data Visualization", "User Experience Prototyping", "Dashboards"
+                    "Usabilty", "User Experience Design", "IT 3.0 Marketplaces", "Dashboards"
                   ],
         "bioPic": "http://cdn.slidesharecdn.com/profile-photo-rockstar6789-96x96.jpg"
     }
@@ -190,3 +190,5 @@ var bio =
         }
       ]
     }
+
+    -->
