@@ -1,0 +1,26 @@
+What does is console.log?
+ - returns "undefined"
+ - prints a string to the console
+ - "undefined" means that there is no savable data that is created
+   - aka: no return value
+
+ What is document.URL?
+ - returns a string, tht is the current document's URL address (e.g. "https://www.udacity.com/course/viewer#!/c-ud804-nd/l-1946788554/m-1951208536")
+
+
+What are some of the ways to replace a string?
+ - str.replace to replace
+ - str.splice to stwart from an index
+
+If you want to hav a variable be filled with it's assocated method/algo/function, what do you type at the end?
+ - return varName;
+
+ What are the characteristics of True and False?
+
+ True-thy (evaluate to True)	False-y (evaluate to False)
+  - true 						 - false
+  - non zero numbers			 - zero
+  - "strings"					 - "" aka Empty Strings
+  - objects						 - undefined
+  - arrays						 - null
+  - functions					 - NaN

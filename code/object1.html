@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+// list skills
+	var skills = ["awesomeness", "programming" , "teaching", "js"]
+//creat the "bio" object, with some key value pairs
+	var bio = {
+		"name" : "Rock",
+		"age" : 42,
+
+		//add the 2nd item from the above "skills" array to the "bio" object
+		"favSkill" : skills[1]
+	};
+
+// output ot the HTML page
+	document.write(bio.age);
+	document.write("<br>");
+
+	// output the skills item we added ot the "bio" object
+	document.write(bio.favSkill);
+	document.write("<br>");
+
+
+	//output the 3rd skills array item
+	document.write(skills[2]);
+	document.write("<br>");
+
+
+
+</script>
+
+</body>
+</html>
