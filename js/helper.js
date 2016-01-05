@@ -143,7 +143,7 @@ function initializeMap() {
       locations.push(work.jobs[job].location);
     }
 
-    return locations;
+    return location;
   }
 
   /*

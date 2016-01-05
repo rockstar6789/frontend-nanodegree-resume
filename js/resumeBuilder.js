@@ -1,8 +1,7 @@
 'use strict';
 var bio = {
     "name": "Rock Jethwa",
-
-
+    "location": "Toronto, ON",
     "role": "UX Architect",
     "contacts": {
         "mobile": "1 416 834 4209",
@@ -11,14 +10,12 @@ var bio = {
         "website": "www.RockJethwa.com"
     },
     "welcomeMessage": "If you want to go fast, go alone ... if you want to go further and farther, go together. Let's go together.",
-    "skills": [
-        "Financial Services", "Digital Products", "User Experience Design", "IT 3.0 Marketplaces", "Enterprise Gamificaiton", "Dashboards", "Purchase Flows"
-    ],
+    "skills": ["Financial Services", "Digital Products", "User Experience Design", "IT 3.0 Marketplaces", "Enterprise Gamificaiton", "Dashboards", "Purchase Flows"],
     "bioPic": "http://cdn.slidesharecdn.com/profile-photo-rockstar6789-96x96.jpg"
 };
 
 
-bio.display = function() {
+bio.display = function () {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -30,7 +27,6 @@ bio.display = function() {
 
     //    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
     //    $("#header").append(formattedBioPic);
-
 
 
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -88,12 +84,12 @@ $("#main").append(internationalizeButton);
 
 var education = {
     "schools": [{
-            "major": "IT Management",
-            "degree": "Bachelor of Commerce",
-            "school": "Ryerson University",
-            "location": "Toronto, ON, Canada"
+        "major": "IT Management",
+        "degree": "Bachelor of Commerce",
+        "school": "Ryerson University",
+        "location": "Toronto, ON, Canada"
 
-        }
+    }
 
     ],
     "PostGradCertifications": [{
@@ -119,7 +115,7 @@ var education = {
     }]
 };
 
-education.display = function() {
+education.display = function () {
 
 
     for (var i = 0; i < education.schools.length; i++) {
@@ -157,7 +153,7 @@ education.display();
 var work = {
     "jobs": [{
         "employer": "TD Bank",
-        "location": "Toronto, CA",
+        "location": "Toronto, ON",
         "title": "IT Architect",
         "dates": "Current > ",
         "description": "Roadmap a Futureproof UX framework that will scale as new features are launched."
@@ -182,7 +178,7 @@ var work = {
     }]
 };
 
-work.display = function() {
+work.display = function () {
     for (var i = 0; i < work.jobs.length; i++) {
         console.log(work.jobs[i]);
         $("#workExperience").append(HTMLworkStart);
@@ -222,9 +218,8 @@ function locationizer(work_obj) {
 *****/
 
 // Console.log of x, y of mouse click event
-$(document).click(function(loc) {
+$(document).click(function (loc) {
     // your code goes here
-
     var x = loc.pageX;
     var y = loc.pageY;
 
@@ -237,7 +232,7 @@ $(document).click(function(loc) {
 
 var projects = {
     "myProjects": [
-        /*        {
+/*        {
                   "projectTitle": "TD IT 3.0 Marketplace",
                   "dates": "",
                   "description": "",
@@ -265,24 +260,20 @@ var projects = {
                     ]
                   },
         */
-        {
-            "projectTitle": "TD Bank of the Future Kiosk",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-td1.jpg", "", ""
-            ]
-        }, {
-            "projectTitle": "TD Securities Enterprise Data Portal",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-td2.jpg", "", ""
-            ]
-        },
+    {
+        "projectTitle": "TD Bank of the Future Kiosk",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td1.jpg", "", ""]
+    }, {
+        "projectTitle": "TD Securities Enterprise Data Portal",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td2.jpg", "", ""]
+    },
 
 
-        /*        {
+/*        {
                   "projectTitle": "Questrade Web Trading Platform",
                   "dates": "",
                   "description": "",
@@ -292,68 +283,55 @@ var projects = {
                     ]
                   },
         */
-        {
-            "projectTitle": "Questrade Mobile Trading App",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""
-            ]
-        }, {
-            "projectTitle": "RBC Mobile Banking App",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-rbc1.jpg", "", ""
-            ]
-        }, {
-            "projectTitle": "RBC Mobile Interac Money Transfers",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-rbc3.jpg", "", ""
-            ]
-        }, {
-            "projectTitle": "RBC Internation Money Transfers",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-rbc2.jpg", "", ""
-            ]
-        },
+    {
+        "projectTitle": "Questrade Mobile Trading App",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""]
+    },
 
-        {
-            "projectTitle": "TELUS Mobile Media Player",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""
-            ]
-        },
+    {
+        "projectTitle": "RBC Mobile Banking App",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc1.jpg", "", ""]
+    }, {
+        "projectTitle": "RBC Mobile Interac Money Transfers",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc3.jpg", "", ""]
+    }, {
+        "projectTitle": "RBC Internation Money Transfers",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc2.jpg", "", ""]
+    },
+
+    {
+        "projectTitle": "TELUS Mobile Media Player",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""]
+    },
 
 
-        {
-            "projectTitle": "TELUS Self Serve Billing Portal",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-telus5.jpg", "", ""
-            ]
-        }, {
-            "projectTitle": "TELUS Zoompass Mobile Wallet",
-            "dates": "",
-            "description": "",
-            "images": [
-                "http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""
-            ]
-        }
-    ]
+    {
+        "projectTitle": "TELUS Self Serve Billing Portal",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus5.jpg", "", ""]
+    }, {
+        "projectTitle": "TELUS Zoompass Mobile Wallet",
+        "dates": "",
+        "description": "",
+        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""]
+    }]
 };
 
 
 // 1. Create function name and add "{"
 // This is also used in the to call the display of the function on the page
-projects.display = function() {
+projects.display = function () {
 
     // 2. create for loop start to iterate through and add "{"
     for (var i = 0; i < projects.myProjects.length; i++) {
@@ -375,7 +353,6 @@ projects.display = function() {
         //    for (var i = 0; i < bio.skills.length; i++) {
         //    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
         //    $("#skills").append(formattedSkills);
-
     }
 
 };
