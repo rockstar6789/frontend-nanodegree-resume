@@ -11,37 +11,37 @@ var bio =
           "github": "rockstar6789",
           "website": "www.RockJethwa.com"
         },
-        "welcomeMessage": "I rate my success by how I make other people successful.",
+        "welcomeMessage": "If you want to go fast, go alone ... if you want to go further and farther, go together. Let's go together.",
         "skills": [
-                    "Financial Services Digital Products", "User Experience Design", "IT 3.0 Marketplaces", "Dashboards"
+                    "Financial Services", "Digital Products", "User Experience Design", "IT 3.0 Marketplaces", "Enterprise Gamificaiton", "Dashboards", "Purchase Flows"
                   ],
         "bioPic": "http://cdn.slidesharecdn.com/profile-photo-rockstar6789-96x96.jpg"
-    }
+    };
 
 
 
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    $("#header").prepend(formattedName);
-
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").prepend(formattedRole);
+    var formattedNameRole = formattedName + formattedRole;
+    $("#header").prepend(formattedNameRole);
 
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-    $("#header").append(formattedBioPic);
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $("#header").append(formattedMessage);
+
+//    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+//    $("#header").append(formattedBioPic);
 
 
 
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-
-
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedContactInfo = formattedEmail + formattedMobile + formattedGithub;
     $("#topContacts").append(formattedContactInfo);
 
 
-    $("#header").append(HTMLskillsStart);
+    $("#topContacts").append(HTMLskillsStart);
     for (var i = 0; i < bio.skills.length; i++) {
     var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
     $("#skills").append(formattedSkills);
@@ -130,7 +130,7 @@ $("#main").append(internationalizeButton);
     "jobs": [
               {
                 "employer" : "TD Bank",
-                "location" : "Toronto, ON",
+                "location" : "Los Angeles, CA",
                 "title" : "IT Architect",
                 "dates" : "Current - ",
                 "description" : "Roadmap a Futureproof UX framework that will scale as new features are launched."
@@ -217,7 +217,7 @@ console.log(x,y);
     {
     "myProjects":
       [
-        {
+/*        {
           "projectTitle": "TD IT 3.0 Marketplace",
           "dates": "",
           "description": "",
@@ -244,17 +244,28 @@ console.log(x,y);
                "", "", ""
             ]
           },
-
-                    {
+*/
+                              {
           "projectTitle": "TD Bank of the Future Kiosk",
           "dates": "",
           "description": "",
           "images":
             [
-               "", "", ""
+               "http://rockjethwa.com/images/img/portfolio/thumb-td1.jpg", "", ""
             ]
         },
-        {
+                  {
+          "projectTitle": "TD Securities Enterprise Data Portal",
+          "dates": "",
+          "description": "",
+          "images":
+            [
+               "http://rockjethwa.com/images/img/portfolio/thumb-td2.jpg", "", ""
+            ]
+          },
+
+
+/*        {
           "projectTitle": "Questrade Web Trading Platform",
           "dates": "",
           "description": "",
@@ -263,13 +274,14 @@ console.log(x,y);
                "", "", ""
             ]
           },
+*/
         {
           "projectTitle": "Questrade Mobile Trading App",
           "dates": "",
           "description": "",
           "images":
             [
-               "", "", ""
+               "http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""
             ]
         },
                     {
@@ -278,7 +290,25 @@ console.log(x,y);
           "description": "",
           "images":
             [
-               "", "", ""
+               "http://rockjethwa.com/images/img/portfolio/thumb-rbc1.jpg", "", ""
+            ]
+        },
+                            {
+          "projectTitle": "RBC Mobile Interac Money Transfers",
+          "dates": "",
+          "description": "",
+          "images":
+            [
+               "http://rockjethwa.com/images/img/portfolio/thumb-rbc3.jpg", "", ""
+            ]
+        },
+                                    {
+          "projectTitle": "RBC Internation Money Transfers",
+          "dates": "",
+          "description": "",
+          "images":
+            [
+               "http://rockjethwa.com/images/img/portfolio/thumb-rbc2.jpg", "", ""
             ]
         },
 
@@ -288,34 +318,27 @@ console.log(x,y);
           "description": "",
           "images":
             [
-               "", "", ""
+               "http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""
             ]
         },
-                          {
-          "projectTitle": "TELUS Mobile Search",
-          "dates": "",
-          "description": "",
-          "images":
-            [
-               "", "", ""
-            ]
-        },
-                    {
-          "projectTitle": "TELUS Mobile Portal",
-          "dates": "",
-          "description": "",
-          "images":
-            [
-               "", "", ""
-            ]
-        },
+
+
                           {
           "projectTitle": "TELUS Self Serve Billing Portal",
           "dates": "",
           "description": "",
           "images":
             [
-               "", "", ""
+               "http://rockjethwa.com/images/img/portfolio/thumb-telus5.jpg", "", ""
+            ]
+        },
+                            {
+          "projectTitle": "TELUS Zoompass Mobile Wallet",
+          "dates": "",
+          "description": "",
+          "images":
+            [
+               "http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""
             ]
         }
       ]
@@ -334,6 +357,18 @@ for (var i = 0; i < projects.myProjects.length; i++) {
   $(".project-entry:last").append(formattedProjectTitle);
 
 
+    if (projects.myProjects[i].images.length > 0) {
+      for (var image in projects.myProjects[i].images) {
+      var formattedImage = HTMLprojectImage.replace("%data%", projects.myProjects[i].images[image]);
+      $(".project-entry:last").append(formattedImage);
+      }
+    }
+
+
+
+//    for (var i = 0; i < bio.skills.length; i++) {
+//    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+//    $("#skills").append(formattedSkills);
 
 
   }
@@ -343,4 +378,3 @@ for (var i = 0; i < projects.myProjects.length; i++) {
 projects.display();
 
 $("#mapDiv").append(googleMap);
-
