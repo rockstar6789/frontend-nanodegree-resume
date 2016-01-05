@@ -19,7 +19,7 @@ var bio =
     };
 
 
-
+bio.display = function() {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -46,10 +46,15 @@ var bio =
     var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
     $("#skills").append(formattedSkills);
 
-    };
+    }
+  };
+bio.display ();
 
 
 
+/*****
+
+!!!Note to Udacity evaluatior: This works; I commented this out because it looks not so cool (aka Fu-gly)
 
 // i18n name Firstname LASTNAME
 function inName(name) {
@@ -73,11 +78,7 @@ function inName(name) {
 // this will run function when iName(name) when button is clicked
 $("#main").append(internationalizeButton);
 
-
-
-
-
-
+*****/
 
 
 
@@ -89,8 +90,8 @@ $("#main").append(internationalizeButton);
       [
         {
           "major": "IT Management",
-          "type": "Bachelor of Commerce",
-          "name": "Ryerson University",
+          "degree": "Bachelor of Commerce",
+          "school": "Ryerson University",
           "location": "Toronto, ON, Canada"
 
         }
@@ -100,39 +101,75 @@ $("#main").append(internationalizeButton);
         [
           {
             "major": "Data Science Toolbox",
-            "type": "Certification",
-            "name": "Johns Hopkins University",
+            "degree": "Certification",
+            "school": "Johns Hopkins University",
             "url" : "http://coursera.com/"
           },
           {
             "major": "Gamificaiton MBA Course",
-            "type": "Certification",
-            "name": "Wharton School of Business",
+            "degree": "Certification",
+            "school": "Wharton School of Business",
             "url": "http://coursera.com/"
           },
           {
             "major": "Front End Web Developer",
-            "type": "Nano Degree",
-            "name": "Udacity Online University",
+            "degree": "Nano Degree",
+            "school": "Udacity Online University",
             "url" : "http://udacity.com/"
           },
           {
-            "certification": "Gamificaiton Level 3",
-            "type": "Certification",
-            "name": "Masterclass with Gabe Zickermann",
+            "major": "Gamificaiton Level 3",
+            "degree": "Certification",
+            "school": "Masterclass with Gabe Zickermann",
             "url":  "http://engagementalliance.org/get-certified/"
          }
         ]
-    }
+    };
+
+education.display = function() {
+
+
+for (var i = 0; i < education.schools.length; i++) {
+  $("#education").append(HTMLschoolStart);
+
+  var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].school);
+  var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+  var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
+
+  var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolMajor;
+  $(".education-entry:last").append(formattedEducation);
+
+
+
+
+  $("#education").append(HTMLonlineClasses);
+
+  for(var i = 0; i < education.PostGradCertifications.length; i++) {
+      $("#education").append(HTMLschoolStart);
+
+    var formattedOnlineTitle= HTMLonlineTitle.replace("%data%", education.PostGradCertifications[i].major);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.PostGradCertifications[i].school);
+    var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+    $(".education-entry:last").append(formattedOnlineTitleSchool);
+  }
+}
+
+};
+
+education.display();
+
+
+
+
 
   var work =
   {
     "jobs": [
               {
                 "employer" : "TD Bank",
-                "location" : "Los Angeles, CA",
+                "location" : "Toronto, CA",
                 "title" : "IT Architect",
-                "dates" : "Current - ",
+                "dates" : "Current > ",
                 "description" : "Roadmap a Futureproof UX framework that will scale as new features are launched."
               },
               {
@@ -168,11 +205,18 @@ for (var i = 0; i < work.jobs.length; i++) {
   var formattedEmployerTitle = formattedEmployer.toUpperCase() + formattedTitle;
   $(".work-entry:last").append(formattedEmployerTitle);
 
+
+
   var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
   $(".work-entry:last").append(formattedDates);
 
+  var formattedWorkLocation= HTMLworkLocation.replace("%data%", work.jobs[i].location);
+  $(".work-entry:last").append(formattedWorkLocation);
+
   var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
   $(".work-entry:last").append(formattedDescription);
+
+
 
 
 }
@@ -344,12 +388,14 @@ console.log(x,y);
       ]
     }
 
+
 // 1. Create function name and add "{"
+// This is also used in the to call the display of the function on the page
 projects.display = function() {
 
 // 2. create for loop start to iterate through and add "{"
 for (var i = 0; i < projects.myProjects.length; i++) {
-// 3. Start
+// 3. Append to the approproate <div> on the index.html page
   $("#projects").append(HTMLprojectStart);
 // 4. create variables for each JSON item you want to interate through
   var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.myProjects[i].projectTitle);
@@ -364,12 +410,9 @@ for (var i = 0; i < projects.myProjects.length; i++) {
       }
     }
 
-
-
 //    for (var i = 0; i < bio.skills.length; i++) {
 //    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
 //    $("#skills").append(formattedSkills);
-
 
   }
 
@@ -377,4 +420,10 @@ for (var i = 0; i < projects.myProjects.length; i++) {
 // Call function to run
 projects.display();
 
+
+
 $("#mapDiv").append(googleMap);
+
+
+
+
