@@ -1,12 +1,13 @@
 'use strict';
 var bio = {
     "name": "Rock Jethwa",
-    "location": "Toronto, ON",
+
     "role": "UX Architect",
     "contacts": {
         "mobile": "1 416 834 4209",
         "email": "rockstar6789@gmail.com",
         "github": "rockstar6789",
+        "location": "Toronto, ON",
         "website": "www.RockJethwa.com"
     },
     "welcomeMessage": "If you want to go fast, go alone ... if you want to go further and farther, go together. Let's go together.",
@@ -32,7 +33,8 @@ bio.display = function () {
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    var formattedContactInfo = formattedEmail + formattedMobile + formattedGithub;
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedContactInfo = formattedEmail + formattedMobile + formattedGithub + formattedLocation;
     $("#topContacts").append(formattedContactInfo);
 
 
@@ -87,7 +89,7 @@ var education = {
         "major": "IT Management",
         "degree": "Bachelor of Commerce",
         "school": "Ryerson University",
-        "location": "Toronto, ON, Canada"
+        "location": "Toronto, ON"
 
     }
 
@@ -125,8 +127,11 @@ education.display = function () {
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
 
-        var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolMajor;
+        var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+        var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolLocation;
         $(".education-entry:last").append(formattedEducation);
+        $(".education-entry:last").append(formattedSchoolMajor);
+
 
 
 
@@ -141,6 +146,7 @@ education.display = function () {
             var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
             $(".education-entry:last").append(formattedOnlineTitleSchool);
         }
+
     }
 
 };
