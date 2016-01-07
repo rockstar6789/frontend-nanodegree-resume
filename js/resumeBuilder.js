@@ -1,14 +1,12 @@
 'use strict';
 var bio = {
     "name": "Rock Jethwa",
-
     "role": "UX Architect",
     "contacts": {
         "mobile": "1 416 834 4209",
         "email": "rockstar6789@gmail.com",
         "github": "rockstar6789",
         "location": "Toronto, ON",
-        "website": "www.RockJethwa.com"
     },
     "welcomeMessage": "If you want to go fast, go alone ... if you want to go further and farther, go together. Let's go together.",
     "skills": ["Financial Services", "Digital Products", "User Experience Design", "IT 3.0 Marketplaces", "Enterprise Gamificaiton", "Dashboards", "Purchase Flows"],
@@ -86,33 +84,31 @@ $("#main").append(internationalizeButton);
 
 var education = {
     "schools": [{
-        "major": "IT Management",
-        "degree": "Bachelor of Commerce",
+        "name": "Ryerson University",
         "location": "Toronto, ON",
+        "degree": "Bachelor of Commerce",
+        "majors": "IT Management",
         "dates": "2005",
-        "school": "Ryerson University"
+        "url": "http://ryerson.ca/"
+
     }],
-    "PostGradCertifications": [{
-        "major": "Data Science Toolbox",
-        "degree": "Certification",
+    "onlineCourses": [{
+        "title": "Data Science Toolbox",
         "school": "Johns Hopkins University",
         "dates": "2015",
         "url": "http://coursera.com/"
     }, {
-        "major": "Gamificaiton MBA Course",
-        "degree": "Certification",
+        "title": "Gamificaiton MBA Course",
         "school": "Wharton School of Business",
         "dates": "2015",
         "url": "http://coursera.com/"
     }, {
-        "major": "Front End Web Developer",
-        "degree": "Nano Degree",
+        "title": "Front End Web Developer",
         "school": "Udacity Online University",
         "dates": "2015",
         "url": "http://udacity.com/"
     }, {
-        "major": "Gamificaiton Level 3",
-        "degree": "Certification",
+        "title": "Gamificaiton Level 3",
         "school": "Masterclass with Gabe Zickermann",
         "dates": "2015",
         "url": "http://engagementalliance.org/get-certified/"
@@ -125,30 +121,21 @@ education.display = function() {
     var school = education.schools.length;
     for (var i = 0; i < school; i++) {
         $("#education").append(HTMLschoolStart);
-
-        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].school);
+        var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
         var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
-
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
         var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolLocation;
         $(".education-entry:last").append(formattedEducation);
         $(".education-entry:last").append(formattedSchoolMajor);
 
-
-
-
         $("#education").append(HTMLonlineClasses);
-
-        for (var i = 0; i < education.PostGradCertifications.length; i++) {
+        for (var i = 0; i < education.onlineCourses.length; i++) {
             $("#education").append(HTMLschoolStart);
-
-            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.PostGradCertifications[i].major);
-            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.PostGradCertifications[i].school);
-
-            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.PostGradCertifications[i].dates);
-            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.PostGradCertifications[i].url);
-
+            var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+            var formattedOnlineURL = HTMLonlineURL.replace("#", education.onlineCourses[i].url).replace("%data%", education.onlineCourses[i].url);
             var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL;
             $(".education-entry:last").append(formattedOnlineTitleSchool);
         }
