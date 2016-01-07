@@ -24,3 +24,13 @@ If you want to hav a variable be filled with it's assocated method/algo/function
   - objects						 - undefined
   - arrays						 - null
   - functions					 - NaN
+
+While Loops
+
+	while(condition){
+	doSomething();
+	}
+ - Loop runs as long as true.
+ - Will exit loop when no longer true.
+
+ Check that var names are EXACTLY the same as the Returns

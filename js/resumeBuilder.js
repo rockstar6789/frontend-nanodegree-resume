@@ -16,7 +16,7 @@ var bio = {
 };
 
 
-bio.display = function () {
+bio.display = function() {
 
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -88,12 +88,9 @@ var education = {
     "schools": [{
         "major": "IT Management",
         "degree": "Bachelor of Commerce",
-        "school": "Ryerson University",
-        "location": "Toronto, ON"
-
-    }
-
-    ],
+        "location": "Toronto, ON",
+        "school": "Ryerson University"
+    }],
     "PostGradCertifications": [{
         "major": "Data Science Toolbox",
         "degree": "Certification",
@@ -117,10 +114,11 @@ var education = {
     }]
 };
 
-education.display = function () {
+education.display = function() {
 
 
-    for (var i = 0; i < education.schools.length; i++) {
+    var school = education.schools.length;
+    for (var i = 0; i < school; i++) {
         $("#education").append(HTMLschoolStart);
 
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].school);
@@ -131,7 +129,6 @@ education.display = function () {
         var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolLocation;
         $(".education-entry:last").append(formattedEducation);
         $(".education-entry:last").append(formattedSchoolMajor);
-
 
 
 
@@ -147,14 +144,12 @@ education.display = function () {
             $(".education-entry:last").append(formattedOnlineTitleSchool);
         }
 
+
     }
 
 };
 
 education.display();
-
-
-
 
 var work = {
     "jobs": [{
@@ -184,8 +179,9 @@ var work = {
     }]
 };
 
-work.display = function () {
-    for (var i = 0; i < work.jobs.length; i++) {
+work.display = function() {
+    var job = work.jobs.length;
+    for (var i = 0; i < job; i++) {
         console.log(work.jobs[i]);
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
@@ -224,7 +220,7 @@ function locationizer(work_obj) {
 *****/
 
 // Console.log of x, y of mouse click event
-$(document).click(function (loc) {
+$(document).click(function(loc) {
     // your code goes here
     var x = loc.pageX;
     var y = loc.pageY;
@@ -238,106 +234,107 @@ $(document).click(function (loc) {
 
 var projects = {
     "myProjects": [
-/*        {
-                  "projectTitle": "TD IT 3.0 Marketplace",
-                  "dates": "",
-                  "description": "",
-                  "images":
-                    [
-                       "", "", ""
-                    ]
-                },
-                {
-                  "projectTitle": "TD Enterprise Hackathon",
-                  "dates": "",
-                  "description": "",
-                  "images":
-                    [
-                       "", "", ""
-                    ]
-                  },
-                {
-                  "projectTitle": "TD Enterprise UX Framework - Banking",
-                  "dates": "",
-                  "description": "",
-                  "images":
-                    [
-                       "", "", ""
-                    ]
-                  },
-        */
-    {
-        "projectTitle": "TD Bank of the Future Kiosk",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td1.jpg", "", ""]
-    }, {
-        "projectTitle": "TD Securities Enterprise Data Portal",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td2.jpg", "", ""]
-    },
+        /*        {
+                          "projectTitle": "TD IT 3.0 Marketplace",
+                          "dates": "",
+                          "description": "",
+                          "images":
+                            [
+                               "", "", ""
+                            ]
+                        },
+                        {
+                          "projectTitle": "TD Enterprise Hackathon",
+                          "dates": "",
+                          "description": "",
+                          "images":
+                            [
+                               "", "", ""
+                            ]
+                          },
+                        {
+                          "projectTitle": "TD Enterprise UX Framework - Banking",
+                          "dates": "",
+                          "description": "",
+                          "images":
+                            [
+                               "", "", ""
+                            ]
+                          },
+                */
+        {
+            "projectTitle": "TD Bank of the Future Kiosk",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td1.jpg", "", ""]
+        }, {
+            "projectTitle": "TD Securities Enterprise Data Portal",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td2.jpg", "", ""]
+        },
 
 
-/*        {
-                  "projectTitle": "Questrade Web Trading Platform",
-                  "dates": "",
-                  "description": "",
-                  "images":
-                    [
-                       "", "", ""
-                    ]
-                  },
-        */
-    {
-        "projectTitle": "Questrade Mobile Trading App",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""]
-    },
+        /*        {
+                          "projectTitle": "Questrade Web Trading Platform",
+                          "dates": "",
+                          "description": "",
+                          "images":
+                            [
+                               "", "", ""
+                            ]
+                          },
+                */
+        {
+            "projectTitle": "Questrade Mobile Trading App",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""]
+        },
 
-    {
-        "projectTitle": "RBC Mobile Banking App",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc1.jpg", "", ""]
-    }, {
-        "projectTitle": "RBC Mobile Interac Money Transfers",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc3.jpg", "", ""]
-    }, {
-        "projectTitle": "RBC Internation Money Transfers",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc2.jpg", "", ""]
-    },
+        {
+            "projectTitle": "RBC Mobile Banking App",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc1.jpg", "", ""]
+        }, {
+            "projectTitle": "RBC Mobile Interac Money Transfers",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc3.jpg", "", ""]
+        }, {
+            "projectTitle": "RBC Internation Money Transfers",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc2.jpg", "", ""]
+        },
 
-    {
-        "projectTitle": "TELUS Mobile Media Player",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""]
-    },
+        {
+            "projectTitle": "TELUS Mobile Media Player",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""]
+        },
 
 
-    {
-        "projectTitle": "TELUS Self Serve Billing Portal",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus5.jpg", "", ""]
-    }, {
-        "projectTitle": "TELUS Zoompass Mobile Wallet",
-        "dates": "",
-        "description": "",
-        "images": ["http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""]
-    }]
+        {
+            "projectTitle": "TELUS Self Serve Billing Portal",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus5.jpg", "", ""]
+        }, {
+            "projectTitle": "TELUS Zoompass Mobile Wallet",
+            "dates": "",
+            "description": "",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""]
+        }
+    ]
 };
 
 
 // 1. Create function name and add "{"
 // This is also used in the to call the display of the function on the page
-projects.display = function () {
+projects.display = function() {
 
     // 2. create for loop start to iterate through and add "{"
     for (var i = 0; i < projects.myProjects.length; i++) {
@@ -364,7 +361,5 @@ projects.display = function () {
 };
 // Call function to run
 projects.display();
-
-
 
 $("#mapDiv").append(googleMap);
