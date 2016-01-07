@@ -35,7 +35,8 @@ bio.display = function() {
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     var formattedContactInfo = formattedEmail + formattedMobile + formattedGithub + formattedLocation;
-    $("#topContacts").append(formattedContactInfo);
+    //$("#topContacts").append(formattedContactInfo);
+    $("#footerContacts").append(formattedContactInfo);
 
 
     $("#topContacts").append(HTMLskillsStart);
@@ -53,9 +54,8 @@ bio.display();
 
 
 
-/*****
 
-!!!Note to Udacity evaluatior: This works; I commented this out because it looks not so cool (aka Fu-gly)
+
 
 // i18n name Firstname LASTNAME
 function inName(name) {
@@ -79,7 +79,7 @@ function inName(name) {
 // this will run function when iName(name) when button is clicked
 $("#main").append(internationalizeButton);
 
-*****/
+
 
 
 
@@ -89,27 +89,32 @@ var education = {
         "major": "IT Management",
         "degree": "Bachelor of Commerce",
         "location": "Toronto, ON",
+        "dates": "2005",
         "school": "Ryerson University"
     }],
     "PostGradCertifications": [{
         "major": "Data Science Toolbox",
         "degree": "Certification",
         "school": "Johns Hopkins University",
+        "dates": "2015",
         "url": "http://coursera.com/"
     }, {
         "major": "Gamificaiton MBA Course",
         "degree": "Certification",
         "school": "Wharton School of Business",
+        "dates": "2015",
         "url": "http://coursera.com/"
     }, {
         "major": "Front End Web Developer",
         "degree": "Nano Degree",
         "school": "Udacity Online University",
+        "dates": "2015",
         "url": "http://udacity.com/"
     }, {
         "major": "Gamificaiton Level 3",
         "degree": "Certification",
         "school": "Masterclass with Gabe Zickermann",
+        "dates": "2015",
         "url": "http://engagementalliance.org/get-certified/"
     }]
 };
@@ -140,7 +145,11 @@ education.display = function() {
 
             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.PostGradCertifications[i].major);
             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.PostGradCertifications[i].school);
-            var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool;
+
+            var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.PostGradCertifications[i].dates);
+            var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.PostGradCertifications[i].url);
+
+            var formattedOnlineTitleSchool = formattedOnlineTitle + formattedOnlineSchool + formattedOnlineDates + formattedOnlineURL;
             $(".education-entry:last").append(formattedOnlineTitleSchool);
         }
 
@@ -264,13 +273,13 @@ var projects = {
                 */
         {
             "projectTitle": "TD Bank of the Future Kiosk",
-            "dates": "",
-            "description": "",
+            "dates": "2015",
+            "description": "In branch interactive product onboarding kiosk.",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td1.jpg", "", ""]
         }, {
             "projectTitle": "TD Securities Enterprise Data Portal",
-            "dates": "",
-            "description": "",
+            "dates": "2014",
+            "description": "Web based bloomberg like portal for trading and managers.",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-td2.jpg", "", ""]
         },
 
@@ -287,46 +296,53 @@ var projects = {
                 */
         {
             "projectTitle": "Questrade Mobile Trading App",
-            "dates": "",
-            "description": "",
+            "dates": "2013",
+            "description": "Web and tablet trading app with sidebar gadgets.",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""]
+        },
+
+        {
+            "projectTitle": "Questrade Mobile Trading App",
+            "dates": "2012",
+            "description": "iPhone, Android, Mobile Web real time stock market trading apps",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-quest1.jpg", "", ""]
         },
 
         {
             "projectTitle": "RBC Mobile Banking App",
-            "dates": "",
-            "description": "",
+            "dates": "2012",
+            "description": "Apple Best App Award. App for Top 50 Global Bank.",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc1.jpg", "", ""]
         }, {
             "projectTitle": "RBC Mobile Interac Money Transfers",
-            "dates": "",
-            "description": "",
+            "dates": "2011",
+            "description": "1st mobile transfers between customers of different domestic banks.",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc3.jpg", "", ""]
         }, {
             "projectTitle": "RBC Internation Money Transfers",
-            "dates": "",
-            "description": "",
+            "dates": "2010",
+            "description": "Money transfers between customers of different foreign banks.",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-rbc2.jpg", "", ""]
         },
 
         {
-            "projectTitle": "TELUS Mobile Media Player",
-            "dates": "",
-            "description": "",
-            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""]
+            "projectTitle": "TELUS Zoompass Mobile Wallet",
+            "dates": "2007",
+            "description": "1st mobile payments between customers of domestic cell phone customers.",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""]
         },
 
 
         {
             "projectTitle": "TELUS Self Serve Billing Portal",
-            "dates": "",
-            "description": "",
+            "dates": "2008",
+            "description": "50% conversion rates using Gamification and User Experience principles.",
             "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus5.jpg", "", ""]
         }, {
-            "projectTitle": "TELUS Zoompass Mobile Wallet",
-            "dates": "",
-            "description": "",
-            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-mobwallet.jpg", "", ""]
+            "projectTitle": "TELUS Mobile Media Player",
+            "dates": "2007",
+            "description": "Mobile media player with in-app storefront found in 1 out of 3 cell phones sold in Canada.",
+            "images": ["http://rockjethwa.com/images/img/portfolio/thumb-telus3.jpg", "", ""]
         }
     ]
 };
@@ -352,6 +368,11 @@ projects.display = function() {
                 $(".project-entry:last").append(formattedImage);
             }
         }
+
+        var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.myProjects[i].dates);
+        $(".project-entry:last").append(formattedProjectDates);
+        var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.myProjects[i].description);
+        $(".project-entry:last").append(formattedProjectDescription);
 
         //    for (var i = 0; i < bio.skills.length; i++) {
         //    var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);

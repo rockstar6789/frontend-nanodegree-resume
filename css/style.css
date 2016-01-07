@@ -115,6 +115,11 @@ a {
 .orange-text {
     color: #f5ae23;
 }
+
+}
+.steelblue-text {
+    color: steelblue;
+}
 .white-text {
     font-weight: bold;
     color: #fff;
@@ -209,8 +214,9 @@ span {
     margin: 0 5%;
 }
 #mapDiv {
+    margin: auto;
     height: 400px;
-    width: 100%;
+    width: 50%;
     padding-bottom: 5%;
 }
 @media only screen and (min-width: 750px) {
