@@ -125,7 +125,17 @@ education.display = function() {
         $("#education").append(HTMLschoolStart);
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+        //comment below is the pre-array JSON replace
+        //var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+
+            if (education.schools[i].majors.length > 0) {
+                    for (var major in education.schools[i].majors) {
+                    var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[major]);
+                    //comment below is for reference only
+                    //$(".education-entry:last").append(formattedSchoolMajor);
+                    }
+                }
+
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
         var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolLocation;
         $(".education-entry:last").append(formattedEducation);
