@@ -83,15 +83,17 @@ $("#main").append(internationalizeButton);
 
 
 var education = {
-    "schools": [{
-        "name": "Ryerson University",
-        "location": "Toronto, ON",
-        "degree": "Bachelor of Commerce",
-        "majors": "IT Management",
-        "dates": "2005",
-        "url": "http://ryerson.ca/"
+    "schools" : [
+        {
+            "name": "Ryerson University",
+            "location": "Toronto, ON",
+            "degree": "Bachelor of Commerce",
+            "majors": "IT Management",
+            "dates": "2005",
+            "url": "http://ryerson.ca/"
 
-    }],
+        }
+    ],
     "onlineCourses": [{
         "title": "Data Science Toolbox",
         "school": "Johns Hopkins University",
@@ -148,31 +150,36 @@ education.display = function() {
 education.display();
 
 var work = {
-    "jobs": [{
+    "jobs": [
+    {
         "employer": "TD Bank",
-        "location": "Toronto, ON",
         "title": "IT Architect",
+        "location": "Toronto, ON",
         "dates": "Current > ",
         "description": "Roadmap a Futureproof UX framework that will scale as new features are launched."
-    }, {
+    },
+    {
         "employer": "Questrade",
-        "location": "Toronto, ON",
         "title": "Sr. UX Designer",
+        "location": "Toronto, ON",
         "dates": "2012-2014",
         "description": "Created a cross platform HTML5 User Experience that can be deployed for iPhone, Android, WindowPhone, Blackberry, Mobile Web"
-    }, {
+    },
+    {
         "employer": "RBC, TD Bank, Bell Mobility",
-        "location": "Toronto, ON",
         "title": "UX Designer",
+        "location": "Toronto, ON",
         "dates": "2008-2012 ",
         "description": "Apple Award for best Financial Services App, with over 2.2 million mobile bill payments in less than 1 year of launch."
-    }, {
+    },
+    {
         "employer": "TELUS",
-        "location": "Toronto, ON",
         "title": "Manager Portal Services",
+        "location": "Toronto, ON",
         "dates": "2005-2008",
         "description": "Increase revenue and user base by more than 2X in 24 months [details propritary]."
-    }]
+    }
+    ]
 };
 
 work.display = function() {
