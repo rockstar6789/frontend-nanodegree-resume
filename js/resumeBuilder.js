@@ -10,7 +10,7 @@ var bio = {
     },
     "welcomeMessage": "If you want to go fast, go alone ... if you want to go further and farther, go together. Let's go together.",
     "skills": ["Financial Services", "Digital Products", "User Experience Design", "IT 3.0 Marketplaces", "Enterprise Gamificaiton", "Dashboards", "Purchase Flows"],
-    "bioPic": "http://cdn.slidesharecdn.com/profile-photo-rockstar6789-96x96.jpg"
+    "biopic": "http://cdn.slidesharecdn.com/profile-photo-rockstar6789-96x96.jpg"
 };
 
 
@@ -24,7 +24,7 @@ bio.display = function() {
     var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedMessage);
 
-    //    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    //    var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
     //    $("#header").append(formattedBioPic);
 
 
@@ -88,7 +88,7 @@ var education = {
             "name": "Ryerson University",
             "location": "Toronto, ON",
             "degree": "Bachelor of Commerce",
-            "majors": "IT Management",
+            "majors": ["IT Management"],
             "dates": "2005",
             "url": "http://ryerson.ca/"
 
@@ -125,7 +125,7 @@ education.display = function() {
         $("#education").append(HTMLschoolStart);
         var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
         var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
         var formattedEducation = formattedSchoolName + formattedSchoolDegree + formattedSchoolLocation;
         $(".education-entry:last").append(formattedEducation);
